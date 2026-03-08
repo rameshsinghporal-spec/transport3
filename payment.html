@@ -212,16 +212,16 @@
         const priceText = document.getElementById('priceText');
         const vehicleTypeText = document.getElementById('vehicleTypeText');
 
-        // Updated with .jpeg extension (as per your files)
+        // Updated QR images + prices (all .jpeg as per your files)
         const config = {
-            'Colour Sticker':     {  img: 'images/1199.png', price: '₹ 1199.00' },
-            'Two Wheeler':        {  img: 'images/1099.png', price: '₹ 1099.00' },
-            'Three Wheeler':      { img: 'images/1294.png', price: '₹ 1294.00' },
-            'Electric Vehicle':   {  img: 'images/1190.png', price: '₹ 1190.00' },
-            'Tractor & Trailer':  { img: 'images/1499.png', price: '₹ 1499.00' },
-            'Four Wheeler':       {  img: 'images/1280.png', price: '₹ 1280.00' },
-            'Heavy Vehicle':      { img: 'images/1399.png', price: '₹ 1399.00' },
-            'Replacement':        { img: 'images/1190.png', price: '₹ 1190.00' }
+            'Colour Sticker':     { img: 'images/1199.jpeg', price: '₹ 1199.00' },
+            'Two Wheeler':        { img: 'images/1099.jpeg', price: '₹ 1099.00' },
+            'Three Wheeler':      { img: 'images/1299.jpeg', price: '₹ 1299.00' },
+            'Electric Vehicle':   { img: 'images/1299.jpeg', price: '₹ 1299.00' },
+            'Tractor & Trailer':  { img: 'images/1399.jpeg', price: '₹ 1399.00' },
+            'Four Wheeler':       { img: 'images/1499.jpeg', price: '₹ 1499.00' },
+            'Heavy Vehicle':      { img: 'images/1499.jpeg', price: '₹ 1499.00' },
+            'Replacement':        { img: 'images/1199.jpeg', price: '₹ 1199.00' }
         };
 
         const settings = config[type] || config['Two Wheeler'];
@@ -233,13 +233,13 @@
             ? 'Replacement / Retain / Transfer' 
             : type;
 
-        // Image load check (debug helper)
+        // Image load check (helps debug)
         qrImg.onload = function () {
             console.log('✅ Image loaded successfully:', settings.img);
         };
         qrImg.onerror = function () {
             console.error('❌ Image FAILED to load:', settings.img);
-            alert('QR image not found: ' + settings.img + '\n\nCheck file name & extension in images folder!');
+            alert('QR image not found: ' + settings.img + '\n\nMake sure the file exists in images folder!');
         };
 
         function downloadQR() {
@@ -253,9 +253,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
