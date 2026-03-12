@@ -212,7 +212,17 @@
         const priceText = document.getElementById('priceText');
         const vehicleTypeText = document.getElementById('vehicleTypeText');
 
-        
+        // Updated QR images + prices (all .jpeg as per your files)
+        const config = {
+            'Colour Sticker':     { img: 'images/1199.png', price: '₹ 1199.00' },
+            'Two Wheeler':        { img: 'images/1099.png', price: '₹ 1099.00' },
+            'Three Wheeler':      { img: 'images/1299.png', price: '₹ 1299.00' },
+            'Electric Vehicle':   { img: 'images/1299.png', price: '₹ 1299.00' },
+            'Tractor & Trailer':  { img: 'images/1399.png', price: '₹ 1399.00' },
+            'Four Wheeler':       { img: 'images/1499.png', price: '₹ 1499.00' },
+            'Heavy Vehicle':      { img: 'images/1499.png', price: '₹ 1499.00' },
+            'Replacement':        { img: 'images/1199.png', price: '₹ 1199.00' }
+        };
 
         const settings = config[type] || config['Two Wheeler'];
 
@@ -243,5 +253,6 @@
     </script>
 </body>
 </html>
+
 
 
