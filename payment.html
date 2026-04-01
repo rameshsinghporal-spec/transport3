@@ -150,6 +150,7 @@
         <div class="order-header">
             <h2>Order Form</h2>
         </div>
+
         <div class="step-indicator">
             <div class="step-item">
                 <span class="step-num">1</span> Details
@@ -158,11 +159,13 @@
                 <span class="step-num">2</span> Payment
             </div>
         </div>
+
         <div class="card-payment">
             <div class="payment-header">
                 <h4 class="fw-bold mb-1">Payment</h4>
                 <p class="text-muted mb-0">Scan the QR to pay. After payment Booking will be confirmed.</p>
             </div>
+
             <div class="payment-body">
                 <div class="summary-box">
                     <div class="summary-row">
@@ -178,6 +181,7 @@
                         <span id="priceText">₹ 1099.00</span>
                     </div>
                 </div>
+
                 <div class="qr-section">
                     <p class="fw-bold mb-2">Payment QR Code</p>
                     <div class="qr-frame">
@@ -185,21 +189,26 @@
                     </div>
                     <a href="#" class="btn-download" onclick="downloadQR()">Save QR Code & Download</a>
                 </div>
+
+                <!-- FORM (No Email Sending) -->
                 <form action="thank-you.html">
                     <div class="mb-3">
                         <label class="form-label">Transaction ID*</label>
-                        <input type="text" class="form-control" placeholder="Enter your transaction ID" required>
+                        <input type="text" class="form-control" required>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">Upload Payment Proof</label>
                         <input type="file" class="form-control" accept="image/*">
-                        <small class="text-muted mt-1 d-block">Upload screenshot or receipt of your payment.</small>
                     </div>
+
                     <button type="submit" class="btn-submit shadow">Submit Order</button>
+
                     <div class="text-center mt-3">
                         <a href="enquiry.html" class="btn-back">Back</a>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -212,7 +221,6 @@
         const priceText = document.getElementById('priceText');
         const vehicleTypeText = document.getElementById('vehicleTypeText');
 
-        // Updated QR images + prices (all .jpeg as per your files)
         const config = {
             'Colour Sticker':     { img: 'images/1199.png', price: '₹ 1199.00' },
             'Two Wheeler':        { img: 'images/1099.png', price: '₹ 1099.00' },
@@ -226,21 +234,11 @@
 
         const settings = config[type] || config['Two Wheeler'];
 
-        // Apply to page
         qrImg.src = settings.img;
         priceText.innerText = settings.price;
         vehicleTypeText.innerText = (type === 'Replacement') 
             ? 'Replacement / Retain / Transfer' 
             : type;
-
-        // Image load check (helps debug)
-        qrImg.onload = function () {
-            console.log('✅ Image loaded successfully:', settings.img);
-        };
-        qrImg.onerror = function () {
-            console.error('❌ Image FAILED to load:', settings.img);
-            alert('QR image not found: ' + settings.img + '\n\nMake sure the file exists in images folder!');
-        };
 
         function downloadQR() {
             const link = document.createElement('a');
@@ -253,6 +251,3 @@
     </script>
 </body>
 </html>
-
-
-
