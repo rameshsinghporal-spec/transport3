@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Payment - Transport Assistance Service</title>
+    <title>Payment - Transport Service</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -24,10 +24,10 @@
 
         .notice {
             background: #fff3cd;
-            padding: 12px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 8px;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .payment-container {
@@ -71,7 +71,6 @@
             background: #e5e7eb;
             display: grid;
             place-items: center;
-            font-size: 14px;
         }
 
         .active .step-num {
@@ -84,7 +83,7 @@
             border-radius: 24px;
             border: 1px solid var(--border);
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         }
 
         .payment-header {
@@ -98,7 +97,6 @@
 
         .summary-box {
             background: #f8fafc;
-            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 25px;
@@ -109,12 +107,6 @@
             justify-content: space-between;
             margin-bottom: 10px;
             font-weight: 600;
-        }
-
-        .summary-row:last-child {
-            margin-bottom: 0;
-            padding-top: 10px;
-            border-top: 1px solid #e2e8f0;
         }
 
         .qr-section {
@@ -128,22 +120,11 @@
             border-radius: 20px;
             padding: 15px;
             display: inline-block;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 16px rgba(13, 110, 253, 0.1);
         }
 
         .qr-frame img {
             width: 220px;
             border-radius: 10px;
-        }
-
-        .form-label {
-            font-weight: 700;
-        }
-
-        .form-control {
-            border-radius: 12px;
-            padding: 12px;
         }
 
         .btn-submit {
@@ -156,12 +137,6 @@
             color: white;
             margin-top: 20px;
         }
-
-        .btn-back {
-            font-weight: 700;
-            color: var(--muted);
-            text-decoration: none;
-        }
     </style>
 </head>
 
@@ -169,10 +144,9 @@
 
 <div class="container payment-container">
 
-    <!-- 🔒 GOOGLE SAFE DISCLAIMER -->
+    <!-- DISCLAIMER -->
     <div class="notice text-center">
-        This is a private assistance service and not affiliated with any government authority or RTO.
-        Users can also apply directly on official government websites. Service charges apply for assistance.
+        This is a private assistance service and not affiliated with any government authority.
     </div>
 
     <div class="order-header">
@@ -190,8 +164,8 @@
 
     <div class="card-payment">
         <div class="payment-header">
-            <h4 class="fw-bold mb-1">Payment</h4>
-            <p class="text-muted mb-0">Scan QR and complete payment to confirm your service request.</p>
+            <h4 class="fw-bold">Payment</h4>
+            <p class="text-muted">Scan QR & complete payment</p>
         </div>
 
         <div class="payment-body">
@@ -201,10 +175,6 @@
                     <span>Vehicle Type:</span>
                     <span id="vehicleTypeText">Two Wheeler</span>
                 </div>
-                <div class="summary-row">
-                    <span>Service Type:</span>
-                    <span>Assistance Service</span>
-                </div>
                 <div class="summary-row text-primary">
                     <span>Total Payable:</span>
                     <span id="priceText">₹ 1099.00</span>
@@ -212,41 +182,21 @@
             </div>
 
             <div class="qr-section">
-                <p class="fw-bold mb-2">Scan & Pay</p>
+                <p class="fw-bold">Scan & Pay</p>
 
+                <!-- QR (UNCHANGED) -->
                 <div class="qr-frame">
-                    <img id="qrImg" src="images/1099.jpeg" alt="Payment QR">
+                    <img id="qrImg" src="images/1099.jpeg" alt="QR">
                 </div>
 
-                <p style="font-size:13px;color:#6b7280;">
-                    Use any UPI app (PhonePe / GPay / Paytm)
-                </p>
+                <br><br>
+                <a href="#" onclick="downloadQR()">Download QR</a>
             </div>
 
             <form action="thank-you.html">
-                <div class="mb-3">
-                    <label class="form-label">Transaction ID*</label>
-                    <input type="text" class="form-control" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Upload Payment Proof</label>
-                    <input type="file" class="form-control" accept="image/*">
-                </div>
-
-                <!-- CONSENT -->
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" required>
-                    <label class="form-check-label">
-                        I understand this is a paid private assistance service.
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-submit">Submit Order</button>
-
-                <div class="text-center mt-3">
-                    <a href="enquiry.html" class="btn-back">Back</a>
-                </div>
+                <input type="text" class="form-control mb-3" placeholder="Transaction ID" required>
+                <input type="file" class="form-control mb-3">
+                <button class="btn-submit">Submit Order</button>
             </form>
 
         </div>
@@ -262,19 +212,35 @@ const priceText = document.getElementById('priceText');
 const vehicleTypeText = document.getElementById('vehicleTypeText');
 
 const config = {
-    'Two Wheeler': { img: 'images/1099.jpeg', price: '₹ 1099.00' },
-    'Three Wheeler': { img: 'images/1299.jpeg', price: '₹ 1299.00' },
-    'Electric Vehicle': { img: 'images/1299.jpeg', price: '₹ 1299.00' },
-    'Four Wheeler': { img: 'images/1499.jpeg', price: '₹ 1499.00' },
-    'Heavy Vehicle': { img: 'images/1499.jpeg', price: '₹ 1499.00' },
-    'Replacement': { img: 'images/1199.jpeg', price: '₹ 1199.00' }
+    'Two Wheeler': '1099',
+    'Three Wheeler': '1299',
+    'Electric Vehicle': '1299',
+    'Four Wheeler': '1499',
+    'Heavy Vehicle': '1499',
+    'Replacement': '1199'
 };
 
-const settings = config[type] || config['Two Wheeler'];
+// 🔥 AUTO QR FIX
+function loadQR(code){
+    qrImg.src = 'images/' + code + '.jpeg';
+    qrImg.onerror = function(){
+        qrImg.onerror = null;
+        qrImg.src = 'images/' + code + '.png';
+    }
+}
 
-qrImg.src = settings.img;
-priceText.innerText = settings.price;
+const code = config[type] || '1099';
+loadQR(code);
+
+priceText.innerText = '₹ ' + code + '.00';
 vehicleTypeText.innerText = type;
+
+function downloadQR(){
+    const link = document.createElement('a');
+    link.href = qrImg.src;
+    link.download = 'QR.jpeg';
+    link.click();
+}
 </script>
 
 </body>
