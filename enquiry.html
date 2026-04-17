@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enquiry - Transport Service</title>
+  <title>Apply - Transport Assistance Service</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -26,10 +26,6 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(229, 231, 235, 0.7);
     }
-    .nlogo {
-      width: 140px;
-      height: auto;
-    }
     .card-pro {
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -44,18 +40,6 @@
       border-radius: 14px;
       border: 1px solid #e5e7eb;
       padding: .75rem .9rem;
-    }
-    .form-control:focus,
-    .form-select:focus {
-      border-color: rgba(13, 110, 253, .55);
-      box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .12);
-    }
-    .section-title {
-      font-weight: 900;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      color: var(--brand);
-      font-size: .85rem;
     }
     .btn-next {
       border-radius: 14px;
@@ -79,6 +63,13 @@
       border: 1px solid rgba(13, 110, 253, .25);
       background: rgba(13, 110, 253, .08);
     }
+    .notice {
+      background: #fff3cd;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 
@@ -87,8 +78,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav-glass sticky-top">
     <div class="container py-2">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Transport Service Home">
-        <span class="brand-text">Transport Service</span>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-text">Transport Assistance Service</span>
       </a>
       <div class="ms-auto d-flex gap-2">
         <a href="index.html" class="btn btn-outline-primary rounded-pill fw-bold">Home</a>
@@ -96,12 +87,20 @@
     </div>
   </nav>
 
+  <!-- TOP DISCLAIMER -->
+  <div class="container mt-3">
+    <div class="notice">
+      This is a private assistance service and not affiliated with any government authority or RTO.
+      Users can also apply directly on official government websites. Service charges may apply.
+    </div>
+  </div>
+
   <!-- Enquiry Form -->
-  <section class="py-5">
+  <section class="py-4">
     <div class="container">
       <div class="text-center mb-4">
-        <h2 class="fw-black" style="font-weight:900;">Booking Details</h2>
-        <p class="text-muted mb-0">Fill your details and complete the payment to proceed.</p>
+        <h2 style="font-weight:900;">Application Details</h2>
+        <p class="text-muted mb-0">Fill your details to proceed with assistance service.</p>
       </div>
 
       <div class="row justify-content-center">
@@ -109,7 +108,7 @@
           <div class="card card-pro">
             <div class="card-body p-4 p-lg-5">
 
-              <h4 class="mb-1" style="font-weight:900;">Booking Form</h4>
+              <h4 class="mb-1" style="font-weight:900;">Application Form</h4>
               <p class="text-muted mb-4">Fields marked with <span class="text-danger">*</span> are required.</p>
 
               <form id="hsrpForm">
@@ -117,106 +116,90 @@
 
                   <!-- Name -->
                   <div class="col-md-6">
-                    <label class="form-label">Full Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="name" required placeholder="Enter your name">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" name="name" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Mobile Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="mobile" maxlength="10" required placeholder="10 digit mobile">
+                    <label class="form-label">Mobile Number *</label>
+                    <input type="text" class="form-control" name="mobile" maxlength="10" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Email ID <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="email" required placeholder="name@example.com">
+                    <label class="form-label">Email ID *</label>
+                    <input type="email" class="form-control" name="email" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">State <span class="text-danger">*</span></label>
+                    <label class="form-label">State *</label>
                     <select class="form-select" name="state" required>
                       <option value="" selected disabled>Select Vehicle State</option>
-                      <option>Andhra Pradesh</option>
-                      <option>Arunachal Pradesh</option>
-                      <option>Assam</option>
-                      <option>Bihar</option>
-                      <option>Chhattisgarh</option>
-                      <option>Goa</option>
-                      <option>Gujarat</option>
-                      <option>Haryana</option>
-                      <option>Himachal Pradesh</option>
-                      <option>Jharkhand</option>
-                      <option>Karnataka</option>
-                      <option>Kerala</option>
-                      <option>Madhya Pradesh</option>
-                      <option>Maharashtra</option>
-                      <option>Manipur</option>
-                      <option>Meghalaya</option>
-                      <option>Mizoram</option>
-                      <option>Nagaland</option>
-                      <option>Odisha</option>
-                      <option>Punjab</option>
-                      <option>Rajasthan</option>
-                      <option>Sikkim</option>
-                      <option>Tamil Nadu</option>
-                      <option>Telangana</option>
-                      <option>Tripura</option>
-                      <option>Uttar Pradesh</option>
-                      <option>Uttarakhand</option>
-                      <option>West Bengal</option>
                       <option>Delhi</option>
+                      <option>Maharashtra</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Gujarat</option>
+                      <option>Rajasthan</option>
+                      <!-- baki same rehne do -->
                     </select>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Application Type <span class="text-danger">*</span></label>
+                    <label class="form-label">Application Type *</label>
                     <select class="form-select" name="app_type" id="appType" required>
                       <option value="New" selected>New Plate</option>
-                      <option value="Replacement">Replacement / Retain / Transfer</option>
+                      <option value="Replacement">Replacement / Transfer</option>
                     </select>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Vehicle Type <span class="text-danger">*</span></label>
+                    <label class="form-label">Vehicle Type *</label>
                     <select class="form-select" name="v_type" id="vType" required>
-                      <option value="Colour Sticker">Colour Sticker</option>
-                      <option value="Two Wheeler" selected>Two Wheeler</option>
-                      <option value="Three Wheeler">Three Wheeler</option>
-                      <option value="Electric Vehicle">Electric Vehicle</option>
-                      <option value="Tractor & Trailer">Tractor & Trailer</option>
-                      <option value="Four Wheeler">Four Wheeler</option>
-                      <option value="Heavy Vehicle">Heavy Vehicle</option>
+                      <option>Two Wheeler</option>
+                      <option>Three Wheeler</option>
+                      <option>Electric Vehicle</option>
+                      <option>Four Wheeler</option>
+                      <option>Heavy Vehicle</option>
                     </select>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Vehicle Reg. No <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="vehicle_reg" maxlength="12" required placeholder="e.g. BR01AB1234">
+                    <label class="form-label">Vehicle Number *</label>
+                    <input type="text" class="form-control" name="vehicle_reg" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Chassis No <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="chassis_no" maxlength="5" required placeholder="Last 5 digits">
+                    <label class="form-label">Chassis No (Last 5 digits) *</label>
+                    <input type="text" class="form-control" name="chassis_no" maxlength="5" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Engine No <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="engine_no" maxlength="5" required placeholder="Last 5 digits">
+                    <label class="form-label">Engine No (Last 5 digits) *</label>
+                    <input type="text" class="form-control" name="engine_no" maxlength="5" required>
                   </div>
 
-                  <!-- Address -->
                   <div class="col-12">
-                    <label class="form-label">Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="address" rows="2" required placeholder="House no, street, area..."></textarea>
+                    <label class="form-label">Address *</label>
+                    <textarea class="form-control" name="address" rows="2" required></textarea>
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Pin Code <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="pincode" maxlength="6" required placeholder="6 digit pincode">
+                    <label class="form-label">Pin Code *</label>
+                    <input type="text" class="form-control" name="pincode" maxlength="6" required>
+                  </div>
+
+                  <!-- CONSENT -->
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" required>
+                      <label class="form-check-label">
+                        I understand this is a private assistance service and I may be contacted for support. Service charges may apply.
+                      </label>
+                    </div>
                   </div>
 
                   <!-- Submit -->
                   <div class="col-md-6 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary btn-next w-100">PROCEED TO PAYMENT →</button>
+                    <button type="submit" class="btn btn-primary btn-next w-100">PROCEED →</button>
                   </div>
 
                 </div>
@@ -232,11 +215,9 @@
 
   <footer class="footer">
     <div class="container text-center">
-      <small>© 2026. All Rights Reserved.</small>
+      <small>This is a private service website and not an official government portal.</small>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     document.getElementById('hsrpForm').addEventListener('submit', function (e) {
@@ -253,5 +234,6 @@
       window.location.href = 'payment.html?type=' + encodeURIComponent(finalType) + '&_=' + ts;
     });
   </script>
+
 </body>
-</html> 
+</html>
