@@ -1,239 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apply - Transport Assistance Service</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vehicle Registration Assistance</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --brand: #0d6efd;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --soft: #f5f7fb;
-      --border: #e5e7eb;
-      --shadow: 0 10px 25px rgba(17, 24, 39, 0.06);
-    }
-    body {
-      background: var(--soft);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    .nav-glass {
-      background: rgba(255, 255, 255, 0.82) !important;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
-    }
-    .card-pro {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      background: var(--card);
-    }
-    .form-label {
-      font-weight: 800;
-    }
-    .form-control,
-    .form-select {
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      padding: .75rem .9rem;
-    }
-    .btn-next {
-      border-radius: 14px;
-      padding: 12px 18px;
-      font-weight: 900;
-    }
-    .footer {
-      margin-top: 32px;
-      padding: 18px 0;
-      background: #0b1220;
-      color: rgba(255, 255, 255, .80);
-    }
-    .brand-text {
-      font-weight: 900;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: #111827;
-      font-size: 1.05rem;
-      padding: .45rem .85rem;
-      border-radius: 999px;
-      border: 1px solid rgba(13, 110, 253, .25);
-      background: rgba(13, 110, 253, .08);
-    }
-    .notice {
-      background: #fff3cd;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-  </style>
+<style>
+body{
+    background:#f5f7fb;
+    font-family:system-ui;
+    padding:40px 0;
+}
+.container-box{
+    max-width:650px;
+    margin:auto;
+}
+.card{
+    border-radius:20px;
+    padding:25px;
+}
+.notice{
+    background:#fff3cd;
+    padding:10px;
+    border-radius:8px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+.btn-main{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    font-weight:700;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg nav-glass sticky-top">
-    <div class="container py-2">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <span class="brand-text">Transport Assistance Service</span>
-      </a>
-      <div class="ms-auto d-flex gap-2">
-        <a href="index.html" class="btn btn-outline-primary rounded-pill fw-bold">Home</a>
-      </div>
-    </div>
-  </nav>
+<div class="container container-box">
 
-  <!-- TOP DISCLAIMER -->
-  <div class="container mt-3">
-    <div class="notice">
-      This is a private assistance service and not affiliated with any government authority or RTO.
-      Users can also apply directly on official government websites. Service charges may apply.
-    </div>
-  </div>
+<!-- 🔴 DISCLAIMER -->
+<div class="notice">
+This is a private assistance service and not affiliated with any government authority. 
+Users can also apply directly on official government websites.
+</div>
 
-  <!-- Enquiry Form -->
-  <section class="py-4">
-    <div class="container">
-      <div class="text-center mb-4">
-        <h2 style="font-weight:900;">Application Details</h2>
-        <p class="text-muted mb-0">Fill your details to proceed with assistance service.</p>
-      </div>
+<div class="card shadow">
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card card-pro">
-            <div class="card-body p-4 p-lg-5">
+<h3 class="mb-3 text-center fw-bold">Booking Details</h3>
 
-              <h4 class="mb-1" style="font-weight:900;">Application Form</h4>
-              <p class="text-muted mb-4">Fields marked with <span class="text-danger">*</span> are required.</p>
+<form action="payment.html" method="GET">
 
-              <form id="hsrpForm">
-                <div class="row g-3">
+<!-- VEHICLE -->
+<div class="mb-3">
+<label class="form-label">Vehicle Type*</label>
+<select name="type" class="form-control" required>
+<option value="">Select Vehicle</option>
+<option>Two Wheeler</option>
+<option>Three Wheeler</option>
+<option>Four Wheeler</option>
+<option>Electric Vehicle</option>
+<option>Tractor & Trailer</option>
+<option>Heavy Vehicle</option>
+<option>Replacement</option>
+</select>
+</div>
 
-                  <!-- Name -->
-                  <div class="col-md-6">
-                    <label class="form-label">Full Name *</label>
-                    <input type="text" class="form-control" name="name" required>
-                  </div>
+<!-- NAME -->
+<div class="mb-3">
+<label class="form-label">Full Name*</label>
+<input type="text" class="form-control" required>
+</div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Mobile Number *</label>
-                    <input type="text" class="form-control" name="mobile" maxlength="10" required>
-                  </div>
+<!-- MOBILE -->
+<div class="mb-3">
+<label class="form-label">Mobile Number*</label>
+<input type="tel" class="form-control" required>
+</div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Email ID *</label>
-                    <input type="email" class="form-control" name="email" required>
-                  </div>
+<!-- STATE -->
+<div class="mb-3">
+<label class="form-label">State*</label>
+<select class="form-control" required>
+<option value="">Select State</option>
 
-                  <div class="col-md-6">
-                    <label class="form-label">State *</label>
-                    <select class="form-select" name="state" required>
-                      <option value="" selected disabled>Select Vehicle State</option>
-                      <option>Delhi</option>
-                      <option>Maharashtra</option>
-                      <option>Uttar Pradesh</option>
-                      <option>Gujarat</option>
-                      <option>Rajasthan</option>
-                      <!-- baki same rehne do -->
-                    </select>
-                  </div>
+<option>Andhra Pradesh</option>
+<option>Arunachal Pradesh</option>
+<option>Assam</option>
+<option>Bihar</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+<option>Gujarat</option>
+<option>Haryana</option>
+<option>Himachal Pradesh</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>Madhya Pradesh</option>
+<option>Maharashtra</option>
+<option>Manipur</option>
+<option>Meghalaya</option>
+<option>Mizoram</option>
+<option>Nagaland</option>
+<option>Odisha</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+<option>Sikkim</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Tripura</option>
+<option>Uttar Pradesh</option>
+<option>Uttarakhand</option>
+<option>West Bengal</option>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Application Type *</label>
-                    <select class="form-select" name="app_type" id="appType" required>
-                      <option value="New" selected>New Plate</option>
-                      <option value="Replacement">Replacement / Transfer</option>
-                    </select>
-                  </div>
+<option>Delhi</option>
+<option>Jammu and Kashmir</option>
+<option>Ladakh</option>
+<option>Puducherry</option>
+<option>Chandigarh</option>
+<option>Lakshadweep</option>
+<option>Andaman and Nicobar Islands</option>
+<option>Dadra and Nagar Haveli and Daman and Diu</option>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Vehicle Type *</label>
-                    <select class="form-select" name="v_type" id="vType" required>
-                      <option>Two Wheeler</option>
-                      <option>Three Wheeler</option>
-                      <option>Electric Vehicle</option>
-                      <option>Four Wheeler</option>
-                      <option>Heavy Vehicle</option>
-                    </select>
-                  </div>
+</select>
+</div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Vehicle Number *</label>
-                    <input type="text" class="form-control" name="vehicle_reg" required>
-                  </div>
+<!-- CITY -->
+<div class="mb-3">
+<label class="form-label">City*</label>
+<input type="text" class="form-control" placeholder="Enter your city" required>
+</div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Chassis No (Last 5 digits) *</label>
-                    <input type="text" class="form-control" name="chassis_no" maxlength="5" required>
-                  </div>
+<!-- ADDRESS -->
+<div class="mb-3">
+<label class="form-label">Full Address*</label>
+<textarea class="form-control" rows="3" required></textarea>
+</div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Engine No (Last 5 digits) *</label>
-                    <input type="text" class="form-control" name="engine_no" maxlength="5" required>
-                  </div>
+<!-- CONSENT -->
+<div class="form-check mb-3">
+<input class="form-check-input" type="checkbox" required>
+<label class="form-check-label">
+I agree this is a private assistance service and charges are applicable.
+</label>
+</div>
 
-                  <div class="col-12">
-                    <label class="form-label">Address *</label>
-                    <textarea class="form-control" name="address" rows="2" required></textarea>
-                  </div>
+<button type="submit" class="btn btn-primary btn-main">Proceed to Payment</button>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Pin Code *</label>
-                    <input type="text" class="form-control" name="pincode" maxlength="6" required>
-                  </div>
+</form>
 
-                  <!-- CONSENT -->
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" required>
-                      <label class="form-check-label">
-                        I understand this is a private assistance service and I may be contacted for support. Service charges may apply.
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- Submit -->
-                  <div class="col-md-6 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary btn-next w-100">PROCEED →</button>
-                  </div>
-
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container text-center">
-      <small>This is a private service website and not an official government portal.</small>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('hsrpForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const vehicleType = document.getElementById('vType').value;
-      const appType = document.getElementById('appType').value;
-
-      let finalType = vehicleType;
-      if (appType === 'Replacement') {
-        finalType = 'Replacement';
-      }
-
-      const ts = new Date().getTime();
-      window.location.href = 'payment.html?type=' + encodeURIComponent(finalType) + '&_=' + ts;
-    });
-  </script>
+</div>
+</div>
 
 </body>
 </html>
