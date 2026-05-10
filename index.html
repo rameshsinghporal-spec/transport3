@@ -1,3 +1,6 @@
+# Updated Full HTML Code
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +47,6 @@
       padding: 25px;
     }
 
-    /* ✅ UPDATED BOX */
     .service-tile {
       border-radius: 10px;
       padding: 30px;
@@ -58,22 +60,121 @@
       justify-content: center;
     }
 
-    /* ✅ SKY BLUE */
-    .blue {
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    .service-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
 
-    /* ✅ YELLOW */
+    .blue {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    }
+
     .yellow {
-      background: linear-gradient(135deg, #fde047, #facc15);
+      background: linear-gradient(135deg, #facc15, #eab308);
       color: #111;
     }
 
-    .section-box {
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gov-blue);
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      color: #64748b;
+      margin-bottom: 30px;
+    }
+
+    .card-soft {
       background: white;
+      border-radius: 16px;
+      padding: 24px;
       border: 1px solid var(--gov-border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      height: 100%;
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gov-blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .quote {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #1a3c6e, #2563eb);
+      color: white;
+      border-radius: 18px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mini {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .icon-bubble {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #eff6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .hr-soft {
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
-      padding: 20px;
+      background: #2563eb;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .small-muted {
+      color: #94a3b8;
+      font-size: 14px;
     }
 
     .footer {
@@ -82,78 +183,100 @@
       margin-top: 40px;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+
+      body {
+        padding-top: 70px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .quote {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .service-tile {
+        min-height: 160px;
+        padding: 25px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<nav class="navbar nav-glass">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div>
-      <div class="logo-text">Transport Service</div>
+  <nav class="navbar nav-glass">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <div class="logo-text">Transport Service</div>
+      </div>
+      <a href="enquiry.html" class="btn btn-primary">Apply Online</a>
     </div>
-    <a href="enquiry.html" class="btn btn-primary">Apply Online</a>
-  </div>
-</nav>
+  </nav>
 
-<section class="container mt-3">
-  <img src="images/advertisement_Test.jpg" style="width:100%; border-radius:6px;">
-</section>
+  <section class="container mt-3">
+    <img src="images/advertisement_Test.jpg" style="width:100%; border-radius:6px;">
+  </section>
 
-<div class="container mt-4">
-  <div class="service-strip">
-    
-    <!-- ✅ UPDATED ROW -->
-    <div class="row g-3 justify-content-center">
+  <div class="container mt-4">
+    <div class="service-strip">
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile blue">
-          <h5>Two Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+      <div class="row g-3 justify-content-center">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile blue">
+            <h5>Two Wheeler</h5>
+            <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile yellow">
-          <h5>Replacement</h5>
-          <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile yellow">
+            <h5>Replacement</h5>
+            <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile blue">
-          <h5>Four Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile blue">
+            <h5>Four Wheeler</h5>
+            <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile yellow">
-          <h5>Three Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile yellow">
+            <h5>Three Wheeler</h5>
+            <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile blue">
-          <h5>Electric Vehicle</h5>
-          <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile blue">
+            <h5>Electric Vehicle</h5>
+            <a href="enquiry.html" class="btn btn-primary mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="service-tile yellow">
-          <h5>Heavy Vehicle</h5>
-          <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-tile yellow">
+            <h5>Heavy Vehicle</h5>
+            <a href="enquiry.html" class="btn btn-dark mt-2">Apply</a>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
 
- <!-- ================= HOW IT WORKS ================= -->
   <section class="section" id="how">
     <div class="container">
       <h2 class="section-title">How it works</h2>
@@ -206,82 +329,7 @@
       </div>
     </div>
   </section>
-  
 
-  <!-- ================= DETAILS / PACKING ================= -->
-  <section class="section" id="reviews">
-    <div class="container">
-      <h1 class="section-title">Transport Service</h1>
-      
-      <p class="section-sub">Strong materials, safe handling, and clean packing—so your items reach without damage.</p>
-
-      <div class="row g-3">
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="d-flex align-items-center gap-2">
-              <div class="icon-bubble">📦</div>
-              <div>
-                <h5 class="service-title mb-0">Quality packing materials</h5>
-                <p class="mini">5-ply cartons, bubble wrap, foam, stretch film, and corrugated sheets.</p>
-              </div>
-            </div>
-            <hr class="hr-soft">
-            <ul class="mini" style="padding-left:18px;">
-              <li>Separate packing for fragile items</li>
-              <li>Moisture & dust protection</li>
-              <li>Labeling for easy unloading</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="d-flex align-items-center gap-2">
-              <div class="icon-bubble">🛋️</div>
-              <div>
-                <h5 class="service-title mb-0">Your product & appliances</h5>
-                <p class="mini">Dismantle, wrap, and secure your large items for transport.</p>
-              </div>
-            </div>
-            <hr class="hr-soft">
-            <ul class="mini" style="padding-left:18px;">
-              <li>Corner guards & edge protection</li>
-              <li>Anti-scratch wrapping</li>
-              <li>Safe loading with straps</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="d-flex align-items-center gap-2">
-              <div class="icon-bubble">✅</div>
-              <div>
-                <h5 class="service-title mb-0">Damage-safe process</h5>
-                <p class="mini">Step-by-step packing with checks before dispatch & delivery.</p>
-              </div>
-            </div>
-            <hr class="hr-soft">
-            <ul class="mini" style="padding-left:18px;">
-              <li>Item checklist & verification</li>
-              <li>Sealed cartons for security</li>
-              <li>Unpacking support on request</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="quote mt-4">
-        <div>
-          <h4>Want delivery only?</h4>
-          <p>Share your item list and delivery location. We’ll arrange unpacking at your place.</p>
-        </div>
-        <a class="btn btn-dark fw-bold px-4 py-2" style="border-radius:12px;" href="enquiry.html">Get Packing Quote →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
   <footer class="footer" id="contact">
     <div class="container py-4">
       <div class="row g-3 align-items-center">
@@ -299,7 +347,6 @@
           <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
             <a href="#services">Services</a>
             <a href="#how">How it works</a>
-            <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
             <a href="enquiry.html" class="fw-bold">Get a Quote</a>
           </div>
@@ -318,3 +365,4 @@
 </body>
 
 </html>
+```
